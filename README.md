@@ -1,25 +1,24 @@
-Composer.lock Parser
-==================
+# Composer.lock Parser
+[![Coverage](https://codecov.io/gh/fr3nch13/ComposerLockParser/branch/main/graph/badge.svg)](https://codecov.io/gh/fr3nch13/ComposerLockParser)
+[![Total Downloads](https://img.shields.io/packagist/dt/fr3nch13/ComposerLockParser.svg?style=flat-square)](https://packagist.org/packages/fr3nch13/ComposerLockParser)
+[![Latest Stable Version](https://img.shields.io/packagist/v/fr3nch13/ComposerLockParser.svg?style=flat-square)](https://packagist.org/packages/fr3nch13/ComposerLockParser)
+[![GitHub release](https://img.shields.io/github/release/fr3nch13/ComposerLockParser.svg)](https://GitHub.com/fr3nch13/ComposerLockParser/releases/)
 
 OOP reader of composer.lock file
 
-This is a for o the original project located at: https://github.com/t4web/ComposerLockParser
+This is a fork of the original project located at: https://github.com/t4web/ComposerLockParser
 
-Introduction
-------------
-Parse composer.lock file and return full information about installed packages in OOP style.
+## Introduction
+Parse `composer.lock` file and return full information about installed packages in OOP style.
 
-Requirements
-------------
+## Requirements
 PHP >= 7.4
 
-TODO
-------------
-- Add more info to the Package.php with info from the composer.lock
 
-Installation
-------------
-### Main Setup
+## TODO
+- Add more info to the `Package.php` with info from the `composer.lock`
+
+## Installation
 
 composer.json:
 ```json
@@ -32,8 +31,7 @@ OR
 composer require fr3nch13/composer-lock-parser
 ```
 
-Usage
-------------
+## Usage
 Creating ComposerInfo object and getting all of the packages
 ```php
 $composerInfo = new \ComposerLockParser\ComposerInfo('/path/to/composer.lock');
