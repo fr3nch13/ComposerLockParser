@@ -1,13 +1,20 @@
 {
-    "name": "t4web/composer-lock-parser",
+    "name": "fr3nch13/composer-lock-parser",
     "description": "OOP reader of composer.lock file.",
     "type": "library",
     "license": "BSD-3-Clause",
     "keywords": [
-        "composer.lock reader"
+        "composer.lock",
+        "composer",
+        "composer.json"
     ],
-    "homepage": "https://github.com/t4web/ComposerLockParser",
+    "homepage": "https://github.com/fr3nch13/ComposerLockParser",
     "authors": [
+        {
+            "name": "Brian French",
+            "email": "fr3nch13@gmail.com",
+            "homepage": "https://github.com/fr3nch13"
+        },
         {
             "name": "Max Gulturyan",
             "email": "gulturyan@gmail.com",
@@ -15,14 +22,49 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0"
+        "php": "~7.4||~8.0"
     },
     "require-dev" : {
-        "codeception/codeception": "<2"
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpstan/phpstan": "^1.9",
+        "phpunit/phpunit": "~9.0||~10.0",
+        "staabm/annotate-pull-request-from-checkstyle": "^1.8"
     },
     "autoload": {
-        "psr-0": {
-            "ComposerLockParser\\": "src/"
+        "psr-4": {
+            "ComposerLockParser\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ComposerLockParser\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "pre-commit": [
+            "@ci"
+        ],
+        "ci": [
+            "@check",
+            "@coverage-text"
+        ],
+        "check": [
+            "@test",
+            "@cs-check",
+            "@phpstan"
+        ],
+        "fix": [
+            "@cs-fix",
+            "@cs-check"
+        ],
+        "cs-check": "php -d memory_limit=-1 ./vendor/bin/phpcs --colors -p -s --extensions=php ./src ./tests",
+        "cs-checkstyle": "php -d memory_limit=-1 ./vendor/bin/phpcs --report=checkstyle --extensions=php ./src ./tests",
+        "cs-fix": "php -d memory_limit=-1 ./vendor/bin/phpcbf --colors --extensions=php ./src ./tests",
+        "phpstan": "php -d memory_limit=-1 ./vendor/bin/phpstan --no-progress -vvv --xdebug",
+        "phpstan-github": "php -d memory_limit=-1 ./vendor/bin/phpstan --no-progress -vvv --error-format=github",
+        "test": "php -d memory_limit=-1 ./vendor/bin/phpunit --colors=always",
+        "coverage": "php -d memory_limit=-1 -d xdebug.mode=coverage ./vendor/bin/phpunit --log-junit tmp/coverage/unitreport.xml --coverage-text --coverage-html tmp/coverage -vvv",
+        "coverage-clover": "php -d memory_limit=-1 -d xdebug.mode=coverage ./vendor/bin/phpunit --coverage-clover=tmp/coverage.xml",
+        "coverage-text": "php -d memory_limit=-1 -d xdebug.mode=coverage ./vendor/bin/phpunit --coverage-text --colors=never"
     }
 }
