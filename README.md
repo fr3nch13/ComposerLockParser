@@ -1,7 +1,7 @@
 # Composer.lock Parser
 [![Coverage](https://codecov.io/gh/fr3nch13/ComposerLockParser/branch/main/graph/badge.svg)](https://codecov.io/gh/fr3nch13/ComposerLockParser)
-[![Total Downloads](https://img.shields.io/packagist/dt/fr3nch13/ComposerLockParser.svg?style=flat-square)](https://packagist.org/packages/fr3nch13/ComposerLockParser)
-[![Latest Stable Version](https://img.shields.io/packagist/v/fr3nch13/ComposerLockParser.svg?style=flat-square)](https://packagist.org/packages/fr3nch13/ComposerLockParser)
+[![Total Downloads](https://img.shields.io/packagist/dt/fr3nch13/composer-lock-parser.svg?style=flat-square)](https://packagist.org/packages/fr3nch13/composer-lock-parser)
+[![Latest Stable Version](https://img.shields.io/packagist/v/fr3nch13/composer-lock-parser.svg?style=flat-square)](https://packagist.org/packages/fr3nch13/composer-lock-parser)
 [![GitHub release](https://img.shields.io/github/release/fr3nch13/ComposerLockParser.svg)](https://GitHub.com/fr3nch13/ComposerLockParser/releases/)
 
 OOP reader of composer.lock file
