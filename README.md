@@ -1,7 +1,9 @@
-Composer .lock Parser
+Composer.lock Parser
 ==================
 
 OOP reader of composer.lock file
+
+This is a for o the original project located at: https://github.com/t4web/ComposerLockParser
 
 Introduction
 ------------
@@ -9,20 +11,25 @@ Parse composer.lock file and return full information about installed packages in
 
 Requirements
 ------------
+PHP >= 7.4
 
-Features / Goals
-----------------
-* Create Composer Entity with full general information from composer.lock [DONE]
-* Create Package Entity with full information about packges [DONE]
+TODO
+------------
+- Add more info to the Package.php with info from the composer.lock
 
 Installation
 ------------
 ### Main Setup
 
+composer.json:
 ```json
 "require": {
-    "t4web/composer-lock-parser": "1.1.*"
+    "fr3nch13/composer-lock-parser": "~1.0"
 }
+```
+OR
+```bash
+composer require fr3nch13/composer-lock-parser
 ```
 
 Usage
@@ -54,7 +61,12 @@ $packages = $composerInfo->getPackages($composerInfo::DEVELOPMENT);
 
 Testing
 ------------
-Tests runs with Codeception
+Tests runs with Phpunit, phpstan, and phpcs
+I reccommend running `composer ci` before committing your code and pushing it to github.
+See the `scripts` in `composer.json`.
 ```bash
-$ codeception run
+$ composer ci
+$ composer test
+$ composer cs-check
+$ composer phpstan
 ```
